@@ -1,0 +1,23 @@
+{% extends "movie_app/base.html" %}
+
+{% block title %}Информация об актере{% endblock %}
+
+{% block content %}
+    <h2>Имя - {{actor.first_name}} </h2>
+    <h2>Фамилия - {{actor.last_name}}</h2>
+    <h2>Гендер - {{actor.gender}}</h2>
+<!--    <h3>{{movie}}</h3>-->
+
+    <hr>
+    <h3>Список фильмов, которые снимал</h3>
+        <ul>
+        {% for movie in actor.movies.all %}
+            <li><a href="{{movie.get_url}}">{{movie}}</a>
+            </li>
+        {% endfor %}
+        </ul>
+
+{% endblock %}
+
+
+

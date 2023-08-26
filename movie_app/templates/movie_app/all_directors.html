@@ -1,0 +1,18 @@
+{% extends "movie_app/base.html" %}
+
+
+{% block title %} Список всех режиссеров {% endblock %}
+
+
+{% block content %}
+    <ul>
+        {% for director in directors %}
+            <li><a href="{{director.get_url}}">{{director.first_name}} {{director.last_name}}</a>,
+<!--                рейтинг - {{movie.rating}} ,-->
+<!--                год - {{movie.year| default:"Неизвестен"}}-->
+            </li>
+        {% endfor %}
+    </ul>
+
+
+{% endblock %}

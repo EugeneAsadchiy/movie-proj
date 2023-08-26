@@ -1,0 +1,16 @@
+{% extends "movie_app/base.html" %}
+
+
+{% block title %} Список всех актеров {% endblock %}
+
+
+{% block content %}
+    <ul>
+        {% for actor in actors %}
+            <li><a href="{{actor.get_url}}">{{actor.first_name}} {{actor.last_name}}</a>,
+<!--                рейтинг - {{movie.rating}} ,-->
+<!--                год - {{movie.year| default:"Неизвестен"}}-->
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
